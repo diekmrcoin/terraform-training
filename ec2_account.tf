@@ -4,7 +4,10 @@ provider "aws" {
   secret_key = ""
 }
 
-resource "aws_instance" "terraform-training" {
-  ami = ""
-  instance_type = "t3a.micro"
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
 }
