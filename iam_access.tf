@@ -31,3 +31,17 @@ resource "aws_iam_group_membership" "readers_users" {
   ]
   group = aws_iam_group.readers.name
 }
+
+resource "aws_iam_access_key" "reader1_access_key" {
+  user = aws_iam_user.user_reader_1.name
+  status = "Inactive"
+}
+
+output "reader-1_access-key" {
+  value     = aws_iam_access_key.reader1_access_key.id
+}
+
+output "reader-1_secret-key" {
+  value     = aws_iam_access_key.reader1_access_key.secret
+  sensitive = true
+}
