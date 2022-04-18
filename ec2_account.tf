@@ -10,8 +10,8 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-west-3"
-  profile  = "terraform-course"
+  profile = "default"
+  region  = "eu-west-3"
 }
 
 resource "aws_vpc" "terraform_course" {
